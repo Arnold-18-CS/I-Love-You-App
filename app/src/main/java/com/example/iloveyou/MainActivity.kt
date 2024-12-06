@@ -109,7 +109,37 @@ fun ILoveYouApp() {
 }
 
 @Composable
+fun LoveQuote(quote: String) {
+    Text(
+        text = quote,
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.Cursive,
+        modifier = Modifier
+            .padding(20.dp)
+    )
+}
 
+@Composable
+fun FromText(){
+    Text(
+        text = "From Arnold",
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Bold,
+        fontFamily = FontFamily.Cursive,
+        modifier = Modifier
+            .padding(20.dp)
+    )
+}
+
+@Composable
+fun LoveImage(){
+    val image = painterResource(id = R.drawable.love)
+    Image(
+        painter = image,
+        contentDescription = null
+    )
+}
 
 @Preview(showBackground = true)
 @Composable
