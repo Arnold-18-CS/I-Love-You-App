@@ -34,4 +34,6 @@ object LoveQuoteProvider {
     fun getRandomQuotes(): String{
         return loveQuotes.random()
     }
+
+    fun getQuotes(): List<String> = loveQuotes
 }
