@@ -45,7 +45,7 @@
 
 <div align="center">
   <a href="">
-    <img src="Screenshot 2024-12-28 000314.png" alt="Logo" width="700px" height="400px" border-radius="50%">
+    <img src="Screenshot 2024-12-28 000314.png" alt="Logo" width="1000px" height="400px" border-radius="50%">
   </a>
 </div>
 
