@@ -1,6 +1,7 @@
 package com.example.iloveyou
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +12,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.Surface
@@ -35,6 +39,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN)
         setContent {
             ILoveYouTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
@@ -57,27 +62,17 @@ fun ILoveYouApp() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFFEECEE)),
+            .background(Color(0xFFFEECEE))
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
+
     )
     {
         LoveImage()
         LoveQuote(loveQuote.value)
         FromText()
         ReloadButton { reloadContent() }
-    }
-}
-
-@Composable
-fun ReloadButton(onReload: () -> Unit) {
-    Button(
-        onClick = onReload,
-        colors = buttonColors(Color(0xFF4C494F)),
-        modifier = Modifier
-            .padding(30.dp)
-    ){
-        Text("More Love", fontSize = 18.sp, fontWeight = FontWeight.Bold)
     }
 }
 
@@ -96,7 +91,7 @@ fun LoveImage(){
         painter = image,
         contentDescription = null,
         modifier = Modifier
-            .padding(20.dp)
+            .padding(top = 5.dp)
             .size(300.dp)
 
     )
@@ -109,6 +104,7 @@ fun LoveQuote(quote: String) {
     )
     Text(
         text = quote,
+        color = Color.Black,
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = cuteFont,
@@ -117,7 +113,8 @@ fun LoveQuote(quote: String) {
         modifier = Modifier
             .size(300.dp)
             .padding(horizontal = 20.dp)
-            .padding(bottom = 16.dp, top = 40.dp)
+            .padding(bottom = 16.dp, top = 15.dp)
+            .wrapContentSize()
     )
 }
 
@@ -128,9 +125,27 @@ fun FromText(){
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = FontFamily.Cursive,
+        color = Color.Black,
         modifier = Modifier
             .padding(20.dp)
     )
+}
+
+@Composable
+fun ReloadButton(onReload: () -> Unit) {
+    Button(
+        onClick = onReload,
+        colors = buttonColors(Color(0xFF1E1F22)),
+        modifier = Modifier
+            .padding(bottom = 30.dp)
+    ){
+        Text(
+            "More Love",
+            color = Color.White,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
 }
 
 @Preview(showBackground = true)
