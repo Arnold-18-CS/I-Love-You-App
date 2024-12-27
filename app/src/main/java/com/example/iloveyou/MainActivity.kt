@@ -121,7 +121,7 @@ fun LoveQuote(quote: String) {
 @Composable
 fun FromText(){
     Text(
-        text = "From Arnold",
+        text = "From Yours Beloved",
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = FontFamily.Cursive,
