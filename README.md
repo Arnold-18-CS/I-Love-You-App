@@ -43,9 +43,11 @@
 
 ## About the Project
 
+<div align="center">
   <a href="">
-    <img src="Screenshot 2024-12-28 000314.png" alt="Logo" width="500px" height="200px" border-radius="50%">
+    <img src="Screenshot 2024-12-28 000314.png" alt="Logo" width="700px" height="400px" border-radius="50%">
   </a>
+</div>
 
   <p>
     The **I Love You App** allows users to send romantic messages to their partners in the form of beautifully displayed images, love quotes, and personalized messages from the sender. Every message contains a love quote paired with a picture and a heartfelt note to make your partner feel cherished.
